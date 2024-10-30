@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
-public class AfterStarGame {
 
+
+public class AfterStarGame {
+/** Mengurangi pengulangan dengan membuat method print() supaya tidak terlalu banyak menggunakan perintah print pada kelas ini menggunakan switch case untuk memilik tindakan yaitu  masuk atau balik*/
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         print("===== SELAMAT DATANG DI PETUALANGAN HALLOWEEN =====");
@@ -9,7 +11,6 @@ public class AfterStarGame {
 
         print("Apa yang akan Anda lakukan? (ketik 'masuk' atau 'balik'): ");
         String pilihan = input.nextLine().toLowerCase();
-
         switch (pilihan) {
             case "masuk":
                 enterHauntedHouse(input);
@@ -28,11 +29,11 @@ public class AfterStarGame {
     private static void print(String text) {
         System.out.println(text);
     }
-
+/** pada private static ini  membuat metode invalidChoice() untuk menangani pilihan yang tidak valid. yang telah di pindahkan dari if else*/
     private static void invalidChoice() {
         print("Pilihan tidak valid! Cobalah lagi.");
     }
-
+/** Memisahkan logika untuk pilihan ke dalam metode enterHauntedHouse() dan turnBack() agar program lebih jelas untuk di baca*/
     private static void enterHauntedHouse(Scanner input) {
         print("Anda membuka pintu rumah berhantu...");
         print("Apa yang akan Anda lakukan?");
@@ -53,7 +54,7 @@ public class AfterStarGame {
                 break;
         }
     }
-
+/** memisahkan turnBack dari metode lainnya*/
     private static void turnBack(Scanner input) {
         print("Anda memutuskan untuk berbalik...");
         print("Apa yang akan Anda lakukan?");
@@ -74,7 +75,7 @@ public class AfterStarGame {
                 break;
         }
     }
-
+/** Memecah tindakan ke dalam metode spesifik (approachShadow(), hideUnderTable(), dll.). dan mendeskrisikan dari method tersebut*/
     private static void approachShadow() {
         print("Dengan hati berdebar, Anda mendekati bayangan itu...");
     }
@@ -91,3 +92,4 @@ public class AfterStarGame {
         print("Anda bersembunyi di balik pohon...");
     }
 }
+
